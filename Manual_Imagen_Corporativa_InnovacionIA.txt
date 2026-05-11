@@ -1,0 +1,386 @@
+
+MANUAL DE IMAGEN CORPORATIVA
+Guía de Identidad Visual y Uso de Marca
+INNOVACION IA
+Ecuador | Espana | 2025
+INDICE DE CONTENIDOS
+		1. Introduccion a la Marca
+		2. Informacion Corporativa
+		3. Logotipo y Simbolo
+		4. Paleta de Colores Corporativos
+		5. Tipografia
+		6. Aplicaciones del Logotipo
+		7. Usos Incorrectos
+		8. Elementos Graficos Complementarios
+		9. Papeleria Corporativa
+		10. Presencia Digital
+		11. Redes Sociales
+		12. Contacto
+
+1. Introduccion a la Marca
+1.1 Proposito del Manual
+Este Manual de Imagen Corporativa establece las directrices y normas para el uso correcto de la identidad visual de Innovacion IA. Su objetivo es garantizar la coherencia y profesionalidad en todas las comunicaciones y aplicaciones de la marca, protegiendo su valor y reconocimiento.
+El cumplimiento de estas normas es fundamental para mantener una imagen solida, unificada y reconocible ante clientes, socios y el mercado en general.
+Importante: Todas las aplicaciones de la marca deben seguir estrictamente las directrices establecidas en este manual. Cualquier variacion debe ser aprobada previamente por el departamento de comunicaciones.
+1.2 Esencia de la Marca
+Innovacion IA representa la vanguardia en soluciones de Inteligencia Artificial para empresas e instituciones. Nuestra identidad visual refleja:
+	•	Innovacion: Estamos a la vanguardia tecnologica
+	•	Profesionalismo: Soluciones serias y confiables
+	•	Accesibilidad: Tecnologia al alcance de todos
+	•	Modernidad: Diseno contemporaneo y fresco
+	•	Confianza: Socio estrategico de largo plazo
+Slogan Principal
+"Haz que la Inteligencia Artificial trabaje para ti"
+Declaracion de Valor
+"La Inteligencia Artificial es la nueva electricidad."
+
+2. Informacion Corporativa
+2.1 Sobre Innovacion IA
+Innovacion IA es una empresa con sede en Ecuador y presencia en Espana, especializada en el desarrollo e implementacion de soluciones de inteligencia artificial (IA) para empresas e instituciones en toda Iberoamerica.
+Fundada en 2022 como empresa de IA, aunque con trayectoria desde 1996 en tecnologia aplicada a empresas, Innovacion IA se ha posicionado como referente en Comunicacion Online y hoy se especializa en Inteligencia Artificial para productividad empresarial.
+Mision
+Ayudamos a organizaciones a integrar la inteligencia artificial de manera efectiva, optimizando sus operaciones, automatizando procesos y maximizando su productividad y rentabilidad.
+Vision
+Ser el socio estrategico lider en la transformacion digital a traves de la IA en America Latina y Espana, generando impacto real en sectores publicos y privados mediante soluciones tecnologicas personalizadas.
+2.2 Datos Corporativos
+Elemento
+Informacion
+Nombre Legal
+Innovacion IA
+Sitio Web
+innovacion.ec
+Telefono
++593 401 89 31
+Fundacion IA
+2022
+Trayectoria Tecnologica
+Desde 1996
+Presencia
+Ecuador y Espana
+Mercado
+Iberoamerica
+2.3 Servicios
+Servicio
+Descripcion
+Agentes de Inteligencia Artificial
+Desarrollo de agentes IA personalizados para automatizacion
+Consultoria en IA
+Asesoria estrategica para implementacion de IA
+Formacion en IA
+Capacitacion y entrenamiento en tecnologias IA
+Asistentes Inteligentes
+Chatbots y asistentes virtuales con IA
+Automatizacion Marketing Digital
+Community Manager IA, gestion de contenidos
+Agentes IA por Voz
+Recepcionista Virtual, atencion 24/7, gestion CRM
+2.4 Equipo Directivo
+Nombre
+Cargo
+Especialidad
+Sergio Jimenez Mazure
+CEO & Founder
+IA Aplicada, Comunicacion, Conferencista
+Jaime Jara
+CSO & Founder
+Gestion de Proyectos, Tecnologia Aplicada, IA Procesos
+Scarlett Sofia Moreau
+Asistente Virtual
+Atencion al Cliente, Customer Experience
+2.5 Partners Tecnologicos
+Innovacion IA trabaja con las principales plataformas tecnologicas del mundo:
+	•	Amazon Inc: Servidores Seguros (AWS)
+	•	Google: Modelos IA Avanzados
+	•	Apple: Integracion con OS
+	•	Stripe: Procesamiento de pagos
+	•	WooCommerce: Comercio electronico
+
+3. Logotipo y Simbolo
+3.1 El Simbolo
+El logotipo de Innovacion IA consiste en un simbolo geometrico compuesto por dos rectangulos redondeados entrelazados en diagonal, formando un patron de eslabones o cadena. Los rectangulos se cruzan en el centro creando un efecto de union y conexion. Este diseno representa:
+	•	Conexion e integracion: Los dos rectangulos entrelazados simbolizan la union entre la inteligencia artificial y las empresas, representando como la IA se integra perfectamente en los procesos empresariales
+	•	Colaboracion: El entrelazado representa la colaboracion entre tecnologia y personas, creando sinergias que potencian resultados
+	•	Solidez y confianza: Los rectangulos con bordes redondeados transmiten estabilidad y accesibilidad, reflejando una tecnologia robusta pero amigable
+	•	Innovacion continua: El patron de cadena sugiere eslabones que se conectan, representando la evolucion y el progreso constante
+	•	Simplicidad elegante: Un diseno limpio y moderno que transmite profesionalismo y vanguardia tecnologica
+Construccion del Simbolo
+El isotipo se construye con dos rectangulos de proporciones 7:5 (ancho:alto), con esquinas redondeadas (radio de 8% del ancho). Los rectangulos estan rotados 30 grados en direcciones opuestas y se cruzan en su punto central, creando el efecto de entrelazado caracteristico.
+
+Version principal (fondo claro)
+
+Version negativa (fondo oscuro)
+3.2 Area de Proteccion
+El logotipo debe mantener un area de proteccion minima equivalente al 25% de su altura en todos los lados. Esta zona debe permanecer libre de cualquier elemento grafico o texto.
+Area de proteccion = 25% de la altura del logo en cada lado
+3.3 Tamano Minimo
+Para garantizar la legibilidad y reconocimiento del logotipo, se establecen los siguientes tamanos minimos:
+Aplicacion
+Tamano Minimo
+Impresion
+25mm de ancho
+Digital
+80px de ancho
+Favicon
+32px x 32px
+
+4. Paleta de Colores Corporativos
+4.1 Colores Principales
+La paleta de colores de Innovacion IA ha sido cuidadosamente seleccionada para transmitir innovacion, confianza y profesionalismo.
+Color
+Muestra
+HEX
+RGB
+Uso
+Naranja Innovacion
+
+#E67E22
+230, 126, 34
+Color principal, CTAs, acentos
+Negro Corporativo
+
+#182022
+24, 32, 34
+Textos, logotipo, fondos
+Azul Tecnologia
+
+#6EC1E4
+110, 193, 228
+Elementos secundarios, iconos
+Verde Exito
+
+#4BC67F
+75, 198, 127
+Confirmaciones, check marks
+4.2 Colores Secundarios
+Color
+Muestra
+HEX
+RGB
+Uso
+Purpura Premium
+
+#382C4D
+56, 44, 77
+Botones secundarios, newsletter
+Gris Corporativo
+
+#5A708C
+90, 112, 140
+Textos secundarios
+Gris Claro
+
+#F5F9FA
+245, 249, 250
+Fondos, secciones
+Blanco
+
+#FFFFFF
+255, 255, 255
+Fondos, espacios
+4.3 Gradientes Permitidos
+Se permite el uso de gradientes en las siguientes combinaciones:
+	•	Gradiente Principal: Naranja (#E67E22) a Naranja Claro (#F5A623) - para botones CTA
+	•	Gradiente Footer: Negro (#182022) a Gris Oscuro (#232D2D) - para fondos footer
+	•	Gradiente Sutil: Blanco (#FFFFFF) a Gris Claro (#F5F9FA) - para fondos de seccion
+
+5. Tipografia
+5.1 Tipografia Principal: Unbounded
+Unbounded es la tipografia principal de Innovacion IA. Se utiliza para titulos, encabezados y elementos destacados. Su diseno moderno y distintivo refleja la innovacion y vanguardia de la marca.
+UNBOUNDED BLACK
+Unbounded Bold
+Unbounded Regular
+Uso
+Peso
+Tamano Recomendado
+Titulo Principal (H1)
+Bold (700)
+32-48pt
+Subtitulos (H2)
+Bold (700)
+24-32pt
+Encabezados (H3)
+Regular (400)
+18-24pt
+Destacados
+Bold (700)
+14-18pt
+Fuente Google Fonts: fonts.google.com/specimen/Unbounded
+5.2 Tipografia Secundaria: Roboto
+Roboto es la tipografia secundaria, utilizada para cuerpo de texto, descripciones y contenido extenso. Su excelente legibilidad la hace ideal para textos largos.
+Roboto Bold - Para enfasis
+Roboto Medium - Para subtitulos
+Roboto Regular - Para cuerpo de texto
+Roboto Light - Para textos secundarios
+Uso
+Peso
+Tamano
+Cuerpo de texto
+Regular (400)
+11-14pt
+Texto destacado
+Medium (500)
+12-14pt
+Botones
+Medium (500)
+14-16pt
+Notas y pies
+Light (300)
+9-10pt
+Fuente Google Fonts: fonts.google.com/specimen/Roboto
+5.3 Tipografia de Respaldo
+En caso de no disponer de las tipografias corporativas, utilizar:
+	•	Para Unbounded: Arial Black, Helvetica Bold, sans-serif
+	•	Para Roboto: Arial, Helvetica, sans-serif
+
+6. Aplicaciones del Logotipo
+6.1 Sobre Fondos de Color
+Tipo de Fondo
+Version del Logo
+Color del Logo
+Fondo Blanco o Claro
+Version Principal
+Negro (#182022)
+Fondo Oscuro (Negro, Azul Oscuro)
+Version Negativa
+Blanco (#FFFFFF)
+Fondo Naranja Corporativo
+Version Negativa
+Blanco (#FFFFFF)
+Fotografias (zona clara)
+Version Principal
+Negro (#182022)
+Fotografias (zona oscura)
+Version Negativa
+Blanco (#FFFFFF)
+6.2 Versiones del Logotipo
+	•	Isotipo: Solo el simbolo geometrico (para aplicaciones reducidas)
+	•	Logotipo Horizontal: Simbolo + "INNOVACION IA" en horizontal
+	•	Logotipo Vertical: Simbolo arriba + "INNOVACION IA" debajo
+
+7. Usos Incorrectos
+7.1 Prohibiciones
+Para mantener la integridad de la marca, estan estrictamente prohibidas las siguientes modificaciones:
+NUNCA se debe:
+	•	Cambiar las proporciones del logotipo (estirar o comprimir)
+	•	Rotar el logotipo
+	•	Aplicar efectos de sombra, bisel o relieve
+	•	Cambiar los colores corporativos por otros
+	•	Colocar el logo sobre fondos muy saturados o con patrones
+	•	Anadir elementos graficos al logotipo
+	•	Modificar la tipografia del nombre
+	•	Usar el logotipo con baja resolucion
+	•	Colocar el logo dentro de formas geometricas no autorizadas
+	•	Aplicar transparencia excesiva (menor al 80%)
+
+8. Elementos Graficos Complementarios
+8.1 Iconografia
+Innovacion IA utiliza iconografia de estilo lineal (outline) con las siguientes caracteristicas:
+	•	Grosor de linea: 2px
+	•	Esquinas redondeadas
+	•	Colores: Naranja (#E67E22) o Negro (#182022)
+	•	Estilo: Moderno y minimalista
+Se recomienda el uso de iconos de Font Awesome 5 o iconos de estilo similar.
+8.2 Estilo Fotografico
+Las imagenes utilizadas en comunicaciones de Innovacion IA deben seguir estas directrices:
+	•	Imagenes de alta calidad y resolucion
+	•	Tematica tecnologica, futurista e innovadora
+	•	Tonalidades calidas con acentos naranjas cuando sea posible
+	•	Imagenes de ciudades futuristas, robots, IA, tecnologia
+	•	Fotografias de personas en entornos profesionales y tecnologicos
+	•	Evitar imagenes genéricas de stock muy usadas
+8.3 Formas Geometricas
+Se pueden utilizar formas geometricas complementarias como:
+	•	Hexagonos (representando conexion y tecnologia)
+	•	Circulos (para fotos de perfil del equipo)
+	•	Formas organicas curvas para separadores de secciones
+	•	Lineas diagonales decorativas en color naranja
+
+9. Papeleria Corporativa
+9.1 Tarjeta de Presentacion
+Elemento
+Especificacion
+Tamano
+85mm x 55mm (estandar)
+Papel
+Couche 350g mate o brillante
+Frente
+Logo centrado, nombre, cargo
+Reverso
+Datos de contacto, redes sociales
+9.2 Hoja Membretada
+Elemento
+Especificacion
+Tamano
+A4 (210mm x 297mm)
+Margenes
+Superior: 25mm, Inferior: 20mm, Laterales: 20mm
+Encabezado
+Logo alineado a la izquierda
+Pie de pagina
+Datos de contacto, web, telefono
+9.3 Firma de Email
+La firma de correo electronico debe incluir:
+	•	Nombre completo
+	•	Cargo
+	•	Logo de Innovacion IA (pequeno)
+	•	Telefono: +593 401 89 31
+	•	Web: innovacion.ec
+	•	Enlaces a redes sociales (iconos)
+
+10. Presencia Digital
+10.1 Sitio Web
+Elemento
+Especificacion
+URL Principal
+innovacion.ec
+Logo en Header
+Esquina superior izquierda, altura max 80px
+Colores de Fondo
+Blanco (#FFFFFF), Gris Claro (#F5F9FA)
+Botones CTA
+Naranja (#E67E22), texto blanco
+Footer
+Negro (#182022) con logo blanco
+10.2 Chatbot Asistente
+Innovacion IA cuenta con Scarlett, asistente virtual inteligente:
+	•	Boton de chat en color verde menta (#4BC67F)
+	•	Avatar circular de la asistente
+	•	Mensaje de bienvenida: "Hola! Soy Scarlett. Como puedo ayudarte hoy?"
+
+11. Redes Sociales
+11.1 Perfiles Oficiales
+Red Social
+Usuario/URL
+Facebook
+facebook.com/SergioJMazure
+Instagram
+instagram.com/sergiojmazure
+LinkedIn
+linkedin.com/in/sergiojmazure
+YouTube
+youtube.com (Innovacion IA)
+11.2 Imagenes para Redes
+Tipo
+Dimensiones
+Foto de Perfil
+400x400px (cuadrado)
+Portada Facebook
+820x312px
+Portada LinkedIn
+1584x396px
+Post Instagram
+1080x1080px
+Historia/Reel
+1080x1920px
+
+12. Contacto
+Innovacion IA
+Sitio Web: innovacion.ec Telefono: +593 401 89 31 Presencia: Ecuador y Espana Mercado: Iberoamerica
+Somos tu socio estrategico en la implementacion de la inteligencia artificial en su empresa con agentes y asistentes inteligentes que multiplican tu productividad.
+12.1 Consultas sobre Uso de Marca
+Para cualquier consulta relacionada con el uso de la identidad visual de Innovacion IA, contactar a traves de:
+	•	Sitio web: innovacion.ec
+	•	Telefono: +593 401 89 31
+Nota: Este manual debe ser consultado antes de cualquier aplicacion de la marca. El uso indebido de la identidad visual puede dantar la imagen corporativa.
+Copyright 2025 INNOVACION IA - Todos los derechos reservados
+Manual de Imagen Corporativa v1.0 | Enero 2025
