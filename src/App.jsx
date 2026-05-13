@@ -113,6 +113,24 @@ function App() {
         </div>
       )}
 
+      <div className="projects-section">
+        <h3 className="projects-title">Otros proyectos de Innovación IA</h3>
+        <div className="projects-grid">
+          <a href="https://agentes.innovacion.ec" target="_blank" rel="noopener noreferrer" className="project-link">
+            <strong>InnovAgentes</strong>
+            <span>Agentes de IA para ventas</span>
+          </a>
+          <a href="https://innovanews.innovacion.ec" target="_blank" rel="noopener noreferrer" className="project-link">
+            <strong>InnovaNews</strong>
+            <span>Lector de noticias con IA</span>
+          </a>
+          <a href="https://innovacion.ec/proyectos" target="_blank" rel="noopener noreferrer" className="project-link">
+            <strong>InnovaVoz</strong>
+            <span>Dictado en macOS</span>
+          </a>
+        </div>
+      </div>
+
       <footer className="app-footer">
         <p>Desarrollado por <a href="https://innovacion.ec" target="_blank" rel="noopener noreferrer">Innovación IA</a>, todos los derechos reservados.</p>
       </footer>

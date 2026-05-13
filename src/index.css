@@ -413,9 +413,63 @@ body {
   color: var(--success);
 }
 
+/* Projects Section */
+.projects-section {
+  width: 100%;
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--glass-border);
+  animation: fadeIn 0.8s ease;
+}
+
+.projects-title {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  width: 100%;
+}
+
+.project-link {
+  background: var(--bg-secondary);
+  border: 1px solid var(--glass-border);
+  padding: 1.25rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.project-link:hover {
+  background: var(--bg-accent);
+  border-color: rgba(230, 126, 34, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.project-link strong {
+  color: var(--brand-primary);
+  font-size: 1.05rem;
+}
+
+.project-link span {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
 /* Footer */
 .app-footer {
-  margin-top: 4rem;
+  margin-top: 3rem;
   text-align: center;
   color: var(--text-muted);
   font-size: 0.85rem;
