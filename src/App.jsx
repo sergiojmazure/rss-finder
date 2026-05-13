@@ -2,6 +2,7 @@ import { Search, Loader2, AlertCircle, Rss } from 'lucide-react';
 import { useState } from 'react';
 import { findRssFeeds } from './utils/rssFinder';
 import ResultCard from './components/ResultCard';
+import logoInnovacion from '../recursos/logo-innovacion-ia.png';
 
 function App() {
   const [url, setUrl] = useState('');
@@ -43,6 +44,7 @@ function App() {
   return (
     <div className="app-container">
       <header className="hero-section">
+        <img src={logoInnovacion} alt="Innovación IA" className="hero-logo" />
         <h1 className="hero-title">
           Encuentra <span>Feeds RSS</span> al Instante
         </h1>
