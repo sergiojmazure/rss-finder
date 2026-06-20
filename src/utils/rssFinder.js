@@ -1,27 +1,27 @@
 /**
  * Utilidad para buscar feeds RSS dado un URL.
- * Resuelve problemas de CORS utilizando el proxy de AllOrigins.
+ *
+ * Para esquivar CORS descargamos el HTML del sitio destino a través de un proxy.
+ * Vía principal: nuestro propio proxy serverless (`/api/proxy`, mismo origen, sin
+ * dependencias de terceros). Como red de seguridad mantenemos algunos proxies
+ * públicos que SÍ funcionan a día de hoy. (Se eliminaron corsproxy.io —ahora de
+ * pago, 403— y thingproxy.freeboard.io —difunto—, y allorigins pasó de /get a /raw).
  */
 
 const CORS_PROXIES = [
+  // 1) Proxy propio (Vercel). Mismo origen → sin CORS, sin terceros. Vía principal.
   {
-    url: (url) => `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`,
-    extract: async (res) => {
-      const data = await res.json();
-      if (!data.contents) throw new Error('No contents');
-      return data.contents;
-    }
-  },
-  {
-    url: (url) => `https://corsproxy.io/?${encodeURIComponent(url)}`,
+    url: (url) => `/api/proxy?url=${encodeURIComponent(url)}`,
     extract: async (res) => await res.text()
   },
+  // 2) AllOrigins /raw (devuelve el cuerpo crudo; /get estaba dando 500).
+  {
+    url: (url) => `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`,
+    extract: async (res) => await res.text()
+  },
+  // 3) Codetabs como último recurso (a veces funciona desde el navegador).
   {
     url: (url) => `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(url)}`,
-    extract: async (res) => await res.text()
-  },
-  {
-    url: (url) => `https://thingproxy.freeboard.io/fetch/${encodeURIComponent(url)}`,
     extract: async (res) => await res.text()
   }
 ];
@@ -92,10 +92,16 @@ export const findRssFeeds = async (targetUrl) => {
     ];
     
     const linkTags = doc.querySelectorAll(feedSelectors.join(', '));
-    
+
     linkTags.forEach(link => {
-      const rel = link.getAttribute('rel');
-      if (rel && !rel.includes('alternate')) return;
+      const rel = (link.getAttribute('rel') || '').toLowerCase();
+      // El selector ya filtra por tipo de feed: solo descartamos rels que
+      // claramente NO son un feed (acepta ausencia de rel, "alternate" o "feed").
+      if (/stylesheet|icon|preload|prefetch|dns-prefetch|manifest|pingback|edituri|apple-touch/.test(rel)) return;
+
+      // Descartar oEmbed (application/json+oembed / xml+oembed): no es un feed.
+      const linkType = (link.getAttribute('type') || '').toLowerCase();
+      if (linkType.includes('oembed')) return;
 
       const rawHref = link.getAttribute('href');
       if (!rawHref) return;
@@ -112,17 +118,28 @@ export const findRssFeeds = async (targetUrl) => {
       });
     });
 
-    // 2. Si DOMParser falló, intentamos con Regex puro
+    // 2. Si DOMParser falló, intentamos con Regex puro.
+    //    Independiente del orden de atributos: primero aislamos cada <link>,
+    //    luego extraemos href y type por separado (WordPress y la mayoría de
+    //    CMS emiten `type` antes que `href`).
     if (results.length === 0) {
-      const regex = /<link[^>]*href=["']([^"']+)["'][^>]*type=["']application\/(rss|atom)\+xml["'][^>]*>/gi;
+      const linkRegex = /<link\b[^>]*>/gi;
+      const feedTypeRegex = /type=["']([^"']*(?:rss|atom|feed\+json)[^"']*|application\/json|text\/xml)["']/i;
+      const hrefRegex = /href=["']([^"']+)["']/i;
       let match;
-      while ((match = regex.exec(htmlContent)) !== null) {
-        const absoluteUrl = resolveUrl(cleanUrl, match[1]);
+      while ((match = linkRegex.exec(htmlContent)) !== null) {
+        const tag = match[0];
+        const typeMatch = feedTypeRegex.exec(tag);
+        if (!typeMatch) continue;
+        if (typeMatch[1].toLowerCase().includes('oembed')) continue;
+        const hrefMatch = hrefRegex.exec(tag);
+        if (!hrefMatch) continue;
+        const absoluteUrl = resolveUrl(cleanUrl, hrefMatch[1]);
         if (!seenUrls.has(absoluteUrl)) {
           seenUrls.add(absoluteUrl);
           results.push({
             url: absoluteUrl,
-            type: `application/${match[2]}+xml`,
+            type: typeMatch[1],
             title: 'Feed (Detectado via Texto)'
           });
         }
@@ -139,7 +156,9 @@ export const findRssFeeds = async (targetUrl) => {
         '/rss.xml',
         '/atom.xml',
         '/feed.xml',
-        '/index.xml'
+        '/index.xml',
+        '/feed.json',
+        '/feed/json'
       ];
       
       // Solo probamos los paths contra el dominio raíz para mayor probabilidad de éxito
@@ -152,11 +171,12 @@ export const findRssFeeds = async (targetUrl) => {
           const content = await fetchContentWithProxies(testUrl);
           const head = content.substring(0, 500).toLowerCase();
           
-          // Verificar firmas comunes de feeds XML/JSON
-          if (head.includes('<rss') || head.includes('<feed') || head.includes('<?xml') || head.includes('"version": "https://jsonfeed.org/version/')) {
+          // Verificar firmas comunes de feeds XML/JSON.
+          // (jsonfeed.org/version sin exigir espacios: el JSON real va minificado)
+          if (head.includes('<rss') || head.includes('<feed') || head.includes('<?xml') || head.includes('jsonfeed.org/version')) {
             let format = 'application/rss+xml';
             if (head.includes('<feed')) format = 'application/atom+xml';
-            if (head.includes('jsonfeed')) format = 'application/json';
+            if (head.includes('jsonfeed')) format = 'application/feed+json';
             
             return {
               url: testUrl,
