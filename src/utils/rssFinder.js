@@ -68,12 +68,14 @@ const fetchContentWithProxies = async (targetUrl) => {
   throw lastError || new Error('All proxies failed or were blocked.');
 };
 
-export const findRssFeeds = async (targetUrl) => {
+// Vía de respaldo: parseo en el navegador (proxy + DOMParser). Se usa solo si
+// el endpoint server-side /api/find falla por cualquier motivo.
+const findRssFeedsLegacy = async (targetUrl) => {
   let cleanUrl = targetUrl.trim();
   if (!cleanUrl.startsWith('http')) {
     cleanUrl = 'https://' + cleanUrl;
   }
-  
+
   try {
     const htmlContent = await fetchContentWithProxies(cleanUrl);
     const results = [];
@@ -205,5 +207,44 @@ export const findRssFeeds = async (targetUrl) => {
     console.error('Error finding RSS feeds:', error);
     throw error;
   }
+};
+
+/**
+ * Busca feeds RSS/Atom/JSON de un sitio.
+ *
+ * Vía principal: endpoint server-side `/api/find`, que descarga solo el <head>,
+ * parsea y aplica la heurística en el servidor y devuelve un JSON compacto.
+ * Es mucho más rápido (el navegador recibe cientos de bytes, no megas de HTML).
+ *
+ * Si /api/find no estuviera disponible (p.ej. error de la función), caemos al
+ * método clásico en el navegador para no dejar al usuario sin resultados.
+ */
+export const findRssFeeds = async (targetUrl) => {
+  const cleanUrl = targetUrl.trim();
+
+  let res;
+  try {
+    res = await fetch(`/api/find?url=${encodeURIComponent(cleanUrl)}`);
+  } catch (err) {
+    // No se pudo ni alcanzar /api/find (red) → respaldo en el navegador.
+    console.warn('/api/find inalcanzable, usando respaldo:', err.message || err);
+    return findRssFeedsLegacy(targetUrl);
+  }
+
+  if (res.ok) {
+    const data = await res.json().catch(() => null);
+    if (data && Array.isArray(data.feeds)) return data.feeds;
+    return findRssFeedsLegacy(targetUrl); // OK pero malformado → respaldo
+  }
+
+  // 4xx: error legítimo (URL inválida / host no permitido) → no reintentar.
+  if (res.status >= 400 && res.status < 500) {
+    const data = await res.json().catch(() => ({}));
+    throw new Error(data.error || 'No se pudo analizar el sitio.');
+  }
+
+  // 5xx u otros → respaldo en el navegador.
+  console.warn(`/api/find devolvió ${res.status}, usando respaldo.`);
+  return findRssFeedsLegacy(targetUrl);
 };
 

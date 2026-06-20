@@ -95,22 +95,29 @@ export async function validateTarget(targetStr) {
   return parsed;
 }
 
+const DEFAULT_HEADERS = {
+  'User-Agent':
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 ' +
+    '(KHTML, like Gecko) Chrome/124.0 Safari/537.36 BuscaRSS/1.0',
+  'Accept':
+    'text/html,application/xhtml+xml,application/xml,' +
+    'application/rss+xml;q=0.9,application/atom+xml;q=0.9,*/*;q=0.8',
+  'Accept-Language': 'es-ES,es;q=0.9,en;q=0.8',
+};
+
 /**
  * Descarga una URL siguiendo redirecciones manualmente y RE-VALIDANDO cada
- * salto (evita SSRF por redirección a un host interno). Aplica un tope de
- * tamaño para evitar agotar memoria. Devuelve el cuerpo como string.
+ * salto (evita SSRF por redirección a un host interno).
+ *
+ * Opciones:
+ *  - maxBytes:   tope de descarga (evita agotar memoria / acelera).
+ *  - stopMarker: si aparece esta cadena (p.ej. "</head>"), corta la descarga.
+ *  - timeoutMs / maxHops.
+ *
+ * Devuelve { text, finalUrl, status } — finalUrl es la URL tras redirecciones,
+ * necesaria para resolver hrefs relativos correctamente.
  */
-export async function safeFetchText(initialUrl, { maxBytes = 8 * 1024 * 1024, timeoutMs = 9000, maxHops = 4 } = {}) {
-  const headers = {
-    'User-Agent':
-      'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 ' +
-      '(KHTML, like Gecko) Chrome/124.0 Safari/537.36 BuscaRSS/1.0',
-    'Accept':
-      'text/html,application/xhtml+xml,application/xml,' +
-      'application/rss+xml;q=0.9,application/atom+xml;q=0.9,*/*;q=0.8',
-    'Accept-Language': 'es-ES,es;q=0.9,en;q=0.8',
-  };
-
+export async function safeFetch(initialUrl, { maxBytes = 8 * 1024 * 1024, stopMarker = null, timeoutMs = 9000, maxHops = 4 } = {}) {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), timeoutMs);
 
@@ -122,7 +129,7 @@ export async function safeFetchText(initialUrl, { maxBytes = 8 * 1024 * 1024, ti
       response = await fetch(target.href, {
         signal: controller.signal,
         redirect: 'manual',
-        headers,
+        headers: DEFAULT_HEADERS,
       });
 
       // Redirección: re-validar el destino antes de seguir.
@@ -135,23 +142,42 @@ export async function safeFetchText(initialUrl, { maxBytes = 8 * 1024 * 1024, ti
       break;
     }
 
-    // Leer con tope de tamaño (streaming) para no agotar memoria.
-    if (!response.body) return await response.text();
+    const finalUrl = target.href;
+    const status = response.status;
+
+    if (!response.body) {
+      return { text: await response.text(), finalUrl, status };
+    }
+
+    // Streaming con tope de tamaño y corte opcional por marcador (p.ej. </head>).
     const reader = response.body.getReader();
-    const chunks = [];
+    const decoder = new TextDecoder('utf-8');
+    const marker = stopMarker ? stopMarker.toLowerCase() : null;
+    let text = '';
     let received = 0;
     while (true) {
       const { done, value } = await reader.read();
       if (done) break;
       received += value.length;
+      text += decoder.decode(value, { stream: true });
+      if (marker && text.toLowerCase().includes(marker)) {
+        await reader.cancel();
+        break;
+      }
       if (received > maxBytes) {
         await reader.cancel();
         break;
       }
-      chunks.push(value);
     }
-    return Buffer.concat(chunks).toString('utf-8');
+    text += decoder.decode();
+    return { text, finalUrl, status };
   } finally {
     clearTimeout(timer);
   }
+}
+
+/** Igual que safeFetch pero devuelve solo el cuerpo (compat. con api/proxy.js). */
+export async function safeFetchText(initialUrl, opts = {}) {
+  const { text } = await safeFetch(initialUrl, opts);
+  return text;
 }
